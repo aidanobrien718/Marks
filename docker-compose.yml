@@ -6,7 +6,7 @@ services:
     environment:
       PORT: "3000"
       DATABASE_PATH: /app/data/marks.json
-      JWT_SECRET: ${JWT_SECRET:-marks-dev-secret}
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET to a strong random value, e.g. openssl rand -hex 32}
     volumes:
       - marks-data:/app/data
     restart: unless-stopped

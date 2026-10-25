@@ -18,6 +18,7 @@ Node 18+.
 
 ```bash
 npm install
+export JWT_SECRET=$(openssl rand -hex 32)   # required; app refuses to start without a real secret
 npm start
 ```
 
@@ -26,6 +27,7 @@ Open http://localhost:3000. Data is created on first request at `data/marks.json
 ## Run with Docker
 
 ```bash
+export JWT_SECRET=$(openssl rand -hex 32)
 docker compose up --build
 ```
 
